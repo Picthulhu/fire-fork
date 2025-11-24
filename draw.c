@@ -49,9 +49,9 @@ void
 dofire(struct buffer *buf)
 {
 	size_t src;
-	size_t rnd_wind = (lrand48() % 7) & 3;
-	size_t rnd_lose = lrand48() % 100;
-	size_t rnd_loss = (lrand48() % 7) & 3;
+	size_t rnd_wind = (rand() % 7) & 3;
+	size_t rnd_lose = rand() % 100;
+	size_t rnd_loss = (rand() % 7) & 3;
 	size_t dest;
 
 	struct tb_cell *realbuf = tb_cell_buffer();
@@ -59,10 +59,10 @@ dofire(struct buffer *buf)
 	for (size_t x = 0; x < buf->width; ++x) {
 		for (size_t y = 1; y < buf->height; ++y) {
 			// TODO; test rngs
-			if ((lrand48() % opts->random_factor) == 0) {
-				rnd_wind = (lrand48() % 7) & 3;
-				rnd_lose = lrand48() % 100;
-				rnd_loss = (lrand48() % 7) & 3;
+			if ((rand() % opts->random_factor) == 0) {
+				rnd_wind = (rand() % 7) & 3;
+				rnd_lose = rand() % 100;
+				rnd_loss = (rand() % 7) & 3;
 			}
 
 			src = y * buf->width + x;
