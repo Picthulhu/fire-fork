@@ -2,7 +2,16 @@
 
 # fire
 
-> The ancient DOOM fire animation in the terminal!
+> The ancient DOOM fire animation in the terminal! (forked for my convenience)
+
+# My forking fix.
+this program doesn't compile with my machines as it was, so I modified it to work.
+
+To be more specific, the `lrand48()` function, used in the `draw.c` file, doesn't seem to be properly identified anymore, and will not compile. I might be missing something, or the function got deprecated. I don't care enough to look, what I DO care about is my fix.
+
+What helps it compile on my machines is replacing every instance of `lrand48()` in `draw.c` with `rand()`. That's it.
+
+Upon further reading, `lrand48()` has been apparently deemed [obsolete](https://linux.die.net/man/3/lrand48) many years ago, and `rand()` is recommended instead. Neat coincidence.
 
 ## what?
 `fire` is a remake of the PSX DOOM fire animation in the terminal,
