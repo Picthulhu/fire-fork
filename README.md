@@ -13,6 +13,8 @@ What helps it compile on my machines is replacing every instance of `lrand48()` 
 
 Upon further reading, `lrand48()` has been apparently deemed [obsolete](https://linux.die.net/man/3/lrand48) many years ago, and `rand()` is recommended instead. Neat coincidence.
 
+# Back to the original description...
+
 ## what?
 `fire` is a remake of the PSX DOOM fire animation in the terminal,
 as seen in the [ly](https://github.com/nullgemm/ly) display manager.
